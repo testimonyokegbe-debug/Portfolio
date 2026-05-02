@@ -1,0 +1,349 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+  width: 85%;
+  max-width: 1100px;
+  margin: auto;
+}
+/* BODY BACKGROUND */
+body{
+  width: 100%;
+  min-height: 100vh;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to right, #e3f2fd, #bbdefb);
+}
+
+/* NAVBAR */
+.navbar{
+    width: 85%;
+    margin: auto;
+    padding: 35px 0;
+    display: flex;
+    align-items: center;
+}
+
+.navbar ul{
+    margin-left: auto;
+}
+
+.navbar ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;
+}
+
+.navbar ul li a{
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+}
+
+.navbar ul li::after{
+    content: '';
+    width: 0;
+    height: 2px;
+    background: #000;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+}
+
+.navbar ul li:hover::after{
+    width: 100%;
+}
+
+/* HERO */
+.hero{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero h1{
+    font-size: 50px;
+    color: #000;
+
+    opacity: 0;
+    transform: translateY(-80px);
+    animation: dropDown 1s ease forwards;
+}
+
+@keyframes dropDown{
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero p{
+    font-size: 20px;
+    color: #333;
+    margin-top: 15px;
+}
+
+/* left text */
+.hero .left{
+    display: inline-block;
+    opacity: 0;
+    transform: translateX(-100px);
+    animation: slideLeft 1s ease forwards;
+    animation-delay: 0.5s;
+}
+
+/* right text */
+.hero .right{
+    display: inline-block;
+    opacity: 0;
+    transform: translateX(100px);
+    animation: slideRight 1s ease forwards;
+    animation-delay: 0.5s;
+}
+
+/* animations */
+@keyframes slideLeft{
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideRight{
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* BUTTON */
+.button{
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    color: black;
+    background: transparent;
+    border: 2px solid black;
+    border-radius: 25px;
+    cursor: pointer;
+    margin: 20px 10px;
+    font-weight: bold;
+    position: relative;
+    overflow: hidden;
+}
+
+.button span{
+    position: absolute;
+    height: 100%;
+    width: 0;
+    background: grey;
+    left: 0;
+    bottom: 0;
+    border-radius: 25px;
+    z-index: -1;
+    transition: 0.5s;
+}
+
+.button:hover span{
+    width: 100%;
+}
+
+footer {
+      text-align: center;
+      padding: 20px;
+      color: black;
+    }
+
+/* ABOUT */
+.about{
+    width: 70%;
+    margin: 100px auto;
+    text-align: center;
+}
+
+.about h2{
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.about p{
+    font-size: 18px;
+    line-height: 1.8;
+}
+/* CONTACT */
+.contact-info {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* CARD DESIGN */
+.card {
+  width: 320px;
+  padding: 25px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+  color: black;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  border: 2px solid white;
+}
+
+.card h2 {
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.card p {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+/* CONTACT INFO */
+.contact-info {
+  margin-top: 15px;
+  text-align: left;
+}
+
+.contact-info p {
+  margin: 8px 0;
+}
+
+/* BUTTON */
+.btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  border-radius: 25px;
+  background: #00c6ff;
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #0072ff;
+}
+
+
+
+
+
+
+
+
+
+
+a{
+    color: #000;
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* Tablets */
+@media (max-width: 768px){
+
+  .container{
+    width: 90%;
+  }
+
+  /* NAVBAR */
+  .navbar{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar ul{
+    margin-left: 0;
+    margin-top: 15px;
+    width: 100%;
+  }
+
+  .navbar ul li{
+    display: block;
+    margin: 10px 0;
+  }
+
+  /* HERO */
+  .hero h1{
+    font-size: 35px;
+  }
+
+  .hero p{
+    font-size: 16px;
+  }
+
+  /* ABOUT */
+  .about{
+    width: 90%;
+  }
+
+  .about h2{
+    font-size: 30px;
+  }
+
+  .about p{
+    font-size: 16px;
+  }
+
+  /* CARD */
+  .card{
+    width: 90%;
+  }
+}
+
+
+/* Phones */
+@media (max-width: 480px){
+
+  .hero h1{
+    font-size: 28px;
+  }
+
+  .hero p{
+    font-size: 14px;
+  }
+
+  .button{
+    width: 150px;
+    padding: 10px 0;
+    font-size: 14px;
+  }
+
+  .card{
+    padding: 20px;
+  }
+
+  .card img{
+    width: 80px;
+    height: 80px;
+  }
+
+}
